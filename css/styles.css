@@ -1,0 +1,407 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    font-size: 0.9375rem;
+    line-height: 1.4;
+}
+
+.topbar {
+    background: #00344F;
+    padding: 10px 20px;
+    margin-bottom: 0;
+    color: #fff;
+}
+.topbar__container {
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.topbar__nav {
+    display: none;
+}
+.topbar__right {
+    text-decoration: underline;
+    color: #fff;
+}
+.header {
+    background: #F7F7F7;
+    padding: 39px 20px 30px;
+}
+.header__container, .topbar__container {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.topbar__container {
+    justify-content: flex-end;
+}
+.header__menu__mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__menu__mobile__icon {
+    color: #094B6D;
+}
+.header__menu__desktop {
+    display: none;
+}
+.brand {
+    color: #094B6D;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+}
+.brand__link{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    width: 90%;
+    justify-content: center;
+}
+.brand__link__iso-img {
+    margin-right: 6px;
+    width: 8%;
+}
+.brand__link__logo-img {
+    margin-right: 10px;
+    width: 85%;
+}
+.search__submit {
+    text-decoration: none;
+    color: #678797;
+    font-size: 17px;
+    padding: 20px;
+    margin: -20px;
+}
+.top-ad {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.top-ad__img__desktop {
+    display: none;
+}
+.section {
+    background: #F7F7F7;
+    padding: 14px 20px;
+}
+.section__container {
+    margin: 0 auto;
+}
+.section__title {
+    font-weight: 700;
+    font-size: 2.067rem;
+}
+.section__title:before {
+    content: "\25a0";
+    padding-right: 16px;
+    color: #094B6D;
+    font-size: 19px;
+    line-height: 2.067rem;
+    vertical-align: text-top;
+}
+.section__featured, .section__calendar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 14px 0 38px;
+}
+
+.card {
+    background: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.card__top {
+    font-size: .75rem;
+    font-weight: 700;
+    width: 100%;
+    text-align: left;
+}
+.color--yellow {
+    color: #FA9B00;
+}
+.card--featured .card__thumbnail {
+    height: 125px;
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+    max-width: 190px;
+}
+.card__thumbnail__img {
+    width:100%;
+}
+.card__content {
+    display: flex;
+    margin-top: 10px;
+}
+.card__top {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.card__location, .card__date{
+    color: #094B6D;
+    font-size: 12px;
+    font-weight: 700;
+    display: block;
+}
+.card__title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+}
+.card--featured {
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #eee;
+    max-width: 221px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.card--featured .card__date {
+    min-height: 66px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000;
+}
+.card--calendar {
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.card--calendar .card__top {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.card--calendar .card__thumbnail {
+    margin-right: 10px;
+    min-width: 115px;
+}
+.card__type {
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 15px;
+}
+.more:after {
+    content: "\25b6";
+    text-decoration: none;
+    margin-left: 5px;
+    color: #094B6D;
+    font-size: 10px;
+}
+.more__link, .more__link:visited {
+    text-transform: capitalize;
+    color: #094B6D;
+}
+.card__more {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.icon-svg {
+    color: #094B6D;
+    vertical-align: top;
+    margin-right: 6px;;
+}
+
+@media (min-width: 600px) {
+    .header__container, .topbar__container {
+        max-width: 1440px;
+        justify-content: space-between;
+    }
+    .topbar__nav {
+        display: flex;
+    }
+    .topbar__nav__link {
+        color: inherit;
+        padding-right: 28px;
+        text-decoration: none;
+    }
+    .topbar__nav__link:hover {
+        text-decoration: underline;
+    }
+    .header__menu__desktop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .header__menu__mobile {
+        display: none;
+    }
+    .brand__link {
+        width: unset;
+    }
+    .brand__link__iso-img {
+        margin-right: 6px;
+        width: 33px;
+    }
+    .brand__link__logo-img {
+        width: 326px;
+    }
+    .menu {
+        display: flex;
+        align-items: center;
+    }
+    .dropdown__label {
+        font-family: Roboto;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+    }
+    .dropdown__icon {
+        margin-left: 16px;
+    }
+    .search {
+        position: relative;
+    }
+    .search__input {
+        height: 39px;
+        width: 284px;
+        left: 0px;
+        top: 2.5px;
+        border-radius: 18px;
+        border: 1px solid #DFDFDF;
+        background: #fff;
+        display: block;
+        padding-left: 40px;
+    }
+    .search__input::placeholder { 
+        color: #76919F;
+    }
+    .search__submit {
+        border: none;
+        padding: 10px;
+        margin: 0;
+        background: transparent;
+        font-size: 17px;
+        line-height: 17px;
+        color: #678797;
+        text-decoration: none;
+        position: absolute;
+        top: 2px;
+    }
+    .header .dropdown {
+        margin-left: 36px;
+    }
+    .header .btn {
+        margin-left: 36px;
+        display: block;
+    }
+    .btn {
+        padding: 11px 22px;
+        color: #fff;
+        border-radius: 21px;
+        font-weight: 700;
+        font-size: 13px;
+        background: #FA9B00;
+        text-decoration: none;
+    }
+    .top-ad__img__desktop {
+        display: block;
+        margin: auto;
+    }
+    .top-ad__img__mobile {
+        display: none;
+    }
+    .section__container {
+        max-width: 1230px;
+    }
+    .section__featured {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 30px;
+    }
+    .section__calendar {
+        flex-wrap: nowrap;
+    }
+    .main {
+        width: 900px;
+    }
+    .card--calendar .card__top {
+        justify-content: space-between;
+        flex: 1 0 100%;
+        flex-direction: row;
+    }
+    .card__title {
+        font-size: 26px;
+        line-height: 30px;
+        text-align: left;
+    }
+    .card__type {
+        margin-top: 10px;
+        font-size: 17px;
+        line-height: 20px;
+    }
+    .card--calendar .card__thumbnail {
+        min-width: 154px;
+    }
+    .side-bar {
+        margin-left: 20px;
+        width: 300px;
+        min-width: 300px;
+    }
+    .side-ad--fixed {
+        position: fixed;
+        top: 20px;
+    }
+}
