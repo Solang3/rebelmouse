@@ -75,7 +75,10 @@
         .topbar__nav {
             display: none;
         }
-        .topbar__right {
+        .topbar__nav__right {
+            font-size: 13px;
+        }
+        .topbar__nav__right__link {
             text-decoration: underline;
             color: #fff;
         }
@@ -142,7 +145,7 @@
         }
         .section {
             background: #F7F7F7;
-            padding: 14px 20px;
+            padding: 11px 20px;
         }
         .section__container {
             margin: 0 auto;
@@ -153,7 +156,7 @@
         }
         .section__title:before {
             content: "\25a0";
-            padding-right: 16px;
+            padding-right: 22px;
             color: #094B6D;
             font-size: 19px;
             line-height: 2.067rem;
@@ -163,7 +166,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 14px 0 38px;
+            margin: 10px 0 28px;
         }
         .card {
             background: #fff;
@@ -181,8 +184,8 @@
             color: #FA9B00;
         }
         .card--featured .card__thumbnail {
-            height: 125px;
-            margin-bottom: 7px;
+            height: 142px;
+            margin-bottom: -1px;
             display: flex;
             align-items: center;
             max-width: 190px;
@@ -230,7 +233,7 @@
             flex-direction: row;
             align-items: center;
             padding: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             flex-wrap: wrap;
         }
         .card--calendar .card__top {
@@ -273,13 +276,15 @@
             .header__container, .topbar__container {
                 max-width: 1440px;
                 justify-content: space-between;
+                padding: 0 32px;
+                box-sizing: border-box;
             }
             .topbar__nav {
                 display: flex;
             }
             .topbar__nav__link {
                 color: inherit;
-                padding-right: 28px;
+                padding-right: 32px;
                 text-decoration: none;
             }
             .topbar__nav__link:hover {
@@ -298,7 +303,7 @@
                 width: unset;
             }
             .brand__link__iso-img {
-                margin-right: 6px;
+                margin-right: 9px;
                 width: 33px;
             }
             .brand__link__logo-img {
@@ -345,12 +350,13 @@
                 text-decoration: none;
                 position: absolute;
                 top: 2px;
+                left: 6px;
             }
             .header .dropdown {
-                margin-left: 36px;
+                margin: 0 25px 0 33px;
             }
             .header .btn {
-                margin-left: 36px;
+                margin-left: 25px;
                 display: block;
             }
             .btn {
@@ -362,12 +368,18 @@
                 background: #FA9B00;
                 text-decoration: none;
             }
+            .top-ad {
+                padding: 25px 0 38px;
+            }
             .top-ad__img__desktop {
                 display: block;
                 margin: auto;
             }
             .top-ad__img__mobile {
                 display: none;
+            }
+            .section__title {
+                padding: 0 15px;
             }
             .section__container {
                 max-width: 1230px;
@@ -425,7 +437,7 @@
                     <a class="topbar__nav__link" href="https://www.rebelmouse.com/">Advertise on Reliabilityweb.com</a>
                     <a class="topbar__nav__link" href="https://www.rebelmouse.com/">Steal These Graphics</a>
                 </nav>
-                <p>Visite nuestro sitio en <a class="topbar__right" href="https://www.rebelmouse.com/">Español</a></p>
+                <p class="topbar__nav__right">Visite nuestro sitio en <a class="topbar__nav__right__link" href="https://www.rebelmouse.com/">Español</a></p>
             </div>
         </div>
         <div class="header">
@@ -490,7 +502,7 @@
                     <div class="card__thumbnail">
                         <img class="card__thumbnail__img" src="images/thumb-01.png" alt="Featured card thumbnail">
                     </div>
-                    <p class="card__date card__date--featured">January 1 -<br>31, 2021</p>
+                    <p class="card__date card__date--featured">January 1 -<br>December 31, 2021</p>
                     <div class="more card__more">
                         <a href="https://www.rebelmouse.com/" class="more__link">Learn More</a>
                     </div>
@@ -672,21 +684,5 @@
             </div>
         </div>
     </section>
-    <script>
-        let scrollPosition = window.scrollY;
-        const sideAdContainer = document.querySelector('.side-bar');
-        const sideAd = document.querySelector('.side-bar__ad');
-        if (sideAdContainer && sideAd) {
-            window.addEventListener('scroll', function() {
-                scrollPosition = window.scrollY;
-                positionTop = sideAdContainer.offsetTop;
-                if (scrollPosition >= positionTop ) {
-                    sideAd.classList.add('side-ad--fixed');
-                } else {
-                    sideAd.classList.remove('side-ad--fixed');
-                }
-            });
-        }
-    </script>
 </body>
 </html>

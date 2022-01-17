@@ -62,7 +62,10 @@ body {
 .topbar__nav {
     display: none;
 }
-.topbar__right {
+.topbar__nav__right {
+    font-size: 13px;
+}
+.topbar__nav__right__link {
     text-decoration: underline;
     color: #fff;
 }
@@ -129,7 +132,7 @@ body {
 }
 .section {
     background: #F7F7F7;
-    padding: 14px 20px;
+    padding: 11px 20px;
 }
 .section__container {
     margin: 0 auto;
@@ -140,7 +143,7 @@ body {
 }
 .section__title:before {
     content: "\25a0";
-    padding-right: 16px;
+    padding-right: 22px;
     color: #094B6D;
     font-size: 19px;
     line-height: 2.067rem;
@@ -150,7 +153,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 14px 0 38px;
+    margin: 10px 0 28px;
 }
 .card {
     background: #fff;
@@ -168,8 +171,8 @@ body {
     color: #FA9B00;
 }
 .card--featured .card__thumbnail {
-    height: 125px;
-    margin-bottom: 7px;
+    height: 142px;
+    margin-bottom: -1px;
     display: flex;
     align-items: center;
     max-width: 190px;
@@ -217,7 +220,7 @@ body {
     flex-direction: row;
     align-items: center;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     flex-wrap: wrap;
 }
 .card--calendar .card__top {
@@ -260,13 +263,15 @@ body {
     .header__container, .topbar__container {
         max-width: 1440px;
         justify-content: space-between;
+        padding: 0 32px;
+        box-sizing: border-box;
     }
     .topbar__nav {
         display: flex;
     }
     .topbar__nav__link {
         color: inherit;
-        padding-right: 28px;
+        padding-right: 32px;
         text-decoration: none;
     }
     .topbar__nav__link:hover {
@@ -285,7 +290,7 @@ body {
         width: unset;
     }
     .brand__link__iso-img {
-        margin-right: 6px;
+        margin-right: 9px;
         width: 33px;
     }
     .brand__link__logo-img {
@@ -332,12 +337,13 @@ body {
         text-decoration: none;
         position: absolute;
         top: 2px;
+        left: 6px;
     }
     .header .dropdown {
-        margin-left: 36px;
+        margin: 0 25px 0 33px;
     }
     .header .btn {
-        margin-left: 36px;
+        margin-left: 25px;
         display: block;
     }
     .btn {
@@ -349,12 +355,18 @@ body {
         background: #FA9B00;
         text-decoration: none;
     }
+    .top-ad {
+        padding: 25px 0 38px;
+    }
     .top-ad__img__desktop {
         display: block;
         margin: auto;
     }
     .top-ad__img__mobile {
         display: none;
+    }
+    .section__title {
+        padding: 0 15px;
     }
     .section__container {
         max-width: 1230px;
