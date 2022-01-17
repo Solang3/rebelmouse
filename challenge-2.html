@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebelmouse test catalog</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        #loading {
+            border: 5px solid #f3f3f3;
+            border-top: 6px solid #9c3;
+            border-radius: 100%;
+            width: 40px;
+            height: 40px;
+            margin: auto;
+            display: none;
+            animation: spin 1s infinite linear;
+            margin: 30px auto;
+        }
+        #loading.display {
+            display: block;
+        }
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        #recordResult {
+            margin: 30px;
+        }
+        #prev, #next {
+            display: inline-block;
+            margin: 20px 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #9c3;
+            border: 1px solid #9c3;
+            color: #333;
+        }
+        #prev:hover, #next:hover {
+            background-color: #f3f3f3;
+            color: #000;
+        }
+        img {
+            max-width: 200px;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="search_records" placeholder="Search for a record..." list="records_data">
+    <button onclick="recordSearch()">search</button>
+    <div id="loading" class="display"></div>
+    <div id="recordResult"></div>
+    <button id="prev">Previous</button><button id="next">Next</button>
+    <script>
+        const recordApi_url = "https://api.airtable.com/v0/appElurJfZ2WmdIUg/Furniture/?api_key=keys1gmUsZYDi7y0g"
+        const loader = document.querySelector("#loading")
+        const prev = document.querySelector("#prev")
+        const next = document.querySelector("#next")
+        const mainContainer = document.getElementById("recordResult")
+        const searchRecords = document.querySelector("#search_records")
+        fetch(recordApi_url)
+            .then(response => response.json())
+            .then(function (data) {
+                appendData(data.records)
+            })
+            .catch(function(error) {
+                console.error('There was an error fetching records')
+                console.error(error)
+            })
+        function appendData(records) {
+            let result = ""
+            const max_size = records.length
+            let startRec = 0
+            let recPerPage = 5
+            paginateResults(startRec,recPerPage)
+            function paginateResults(startRec,recPerPage) {
+                loader.classList.remove("display")
+                const datalist = document.createElement('datalist')
+                datalist.id = 'records_data'
+                searchRecords.setAttribute('list', datalist.id)
+                let fragment = document.createDocumentFragment()
+                for (var i = startRec; i < recPerPage; i++) {
+                    result +=
+                        `<img src="${records[i].fields.Images[0].url}" data-toggle="tooltip" title="${records[i].fields.Name}" />`
+                }
+                for (var i = 0; i < records.length; i++) {
+                    let option = document.createElement('option')
+                    option.appendChild(
+                        document.createElement('strong')
+                    ).textContent = records[i].fields.Name
+                    searchRecords.appendChild(option)
+                    fragment.append(option)
+                }
+                datalist.append(fragment);
+                searchRecords.after(datalist);                                                                                                    
+                mainContainer.innerHTML = result
+            }
+            next.onclick = function(){
+                var next = recPerPage
+                if(max_size>=recPerPage) {
+                    recPerPage = recPerPage + 5
+                    result = ''
+                    paginateResults(next,recPerPage)
+                }
+            }
+            prev.onclick = function(){
+                var pre = recPerPage-(2*5)
+                if(pre>=0) {
+                    recPerPage = recPerPage - 5
+                    result = ''
+                    paginateResults(pre,recPerPage)
+                }
+            }
+            const searchfields = [""]
+            recordSearch = function() {
+                var input = document.getElementById("search_records")
+                var recName = input.value
+                for (var i = 0; i < records.length; i++) {
+                    const data = searchfields.map(k => records[i].fields.Name)
+                    if (data.indexOf(recName) > -1) {
+                        result =`<img src="${records[i].fields.Images[0].url}" data-toggle="tooltip" title="${records[i].fields.Name}" />`
+                    }
+                    mainContainer.innerHTML = result
+                }
+            }
+        }
+    </script>
+</body>
+</html>

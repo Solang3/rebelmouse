@@ -41,16 +41,12 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-
-
 body {
     font-family: 'Roboto', sans-serif;
     color: #000;
     font-size: 0.9375rem;
     line-height: 1.4;
 }
-
 .topbar {
     background: #00344F;
     padding: 10px 20px;
@@ -156,7 +152,6 @@ body {
     justify-content: center;
     margin: 14px 0 38px;
 }
-
 .card {
     background: #fff;
     position: relative;
@@ -225,7 +220,6 @@ body {
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
-
 .card--calendar .card__top {
     display: flex;
     justify-content: flex-start;
@@ -262,7 +256,6 @@ body {
     vertical-align: top;
     margin-right: 6px;;
 }
-
 @media (min-width: 600px) {
     .header__container, .topbar__container {
         max-width: 1440px;
